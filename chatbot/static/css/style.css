@@ -1,6 +1,7 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
+/* Estilos base para la aplicación */
+.contenedor-principal {
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: #f5f7fa;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,111 +9,118 @@ body {
     margin: 0;
 }
 
-#chat-container {
+/* Contenedor del diálogo */
+.ventana-conversacion {
     width: 420px;
     height: 550px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 
-#chat-log {
+/* Área de mensajes */
+.area-mensajes {
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
-    background-color: #f7f9fc;
-    border-bottom: 1px solid #e0e0e0;
+    background-color: #f8fafd;
+    border-bottom: 1px solid #e5e9f0;
     display: flex;
     flex-direction: column;
     gap: 15px;
     scroll-behavior: smooth;
 }
 
-#chat-log::-webkit-scrollbar {
-    width: 8px;
+/* Personalización de la barra de desplazamiento */
+.area-mensajes::-webkit-scrollbar {
+    width: 6px;
 }
 
-#chat-log::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
+.area-mensajes::-webkit-scrollbar-track {
+    background: #f1f3f7;
+    border-radius: 6px;
 }
 
-#chat-log::-webkit-scrollbar-thumb {
-    background: #c7c7c7;
-    border-radius: 10px;
+.area-mensajes::-webkit-scrollbar-thumb {
+    background: #d1d6e0;
+    border-radius: 6px;
 }
 
-#user-input-form {
+/* Formulario de entrada */
+.formulario-entrada {
     display: flex;
     padding: 15px;
     background-color: #fff;
+    border-top: 1px solid #e5e9f0;
 }
 
-#user-input {
+.campo-entrada {
     flex-grow: 1;
     padding: 12px 15px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #e5e9f0;
     border-radius: 25px;
-    font-size: 16px;
+    font-size: 15px;
     outline: none;
-    transition: border-color 0.2s ease-in-out;
+    transition: border-color 0.2s ease;
 }
 
-#user-input:focus {
-    border-color: #007bff;
+.campo-entrada:focus {
+    border-color: #4a6cf7;
 }
 
-#send-btn {
+.boton-envio {
     padding: 12px 20px;
     margin-left: 10px;
     border: none;
     border-radius: 25px;
-    background: linear-gradient(45deg, #007bff, #0056b3);
+    background: linear-gradient(45deg, #4a6cf7, #3a5bd9);
     color: #fff;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
-#send-btn:hover {
-    background: linear-gradient(45deg, #0056b3, #004085);
-    transform: translateY(-2px);
+.boton-envio:hover {
+    background: linear-gradient(45deg, #3a5bd9, #2c4bc2);
+    transform: translateY(-1px);
 }
 
-.message {
-    padding: 10px 15px;
+/* Estilos para los mensajes */
+.mensaje {
+    padding: 12px 16px;
     border-radius: 20px;
     max-width: 80%;
     position: relative;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    animation: aparecer 0.4s ease-out;
 }
 
-.user-message {
+.mensaje-usuario {
     align-self: flex-end;
-    background-color: #007bff;
+    background-color: #4a6cf7;
     color: #fff;
     text-align: right;
     border-bottom-right-radius: 5px;
 }
 
-.bot-message {
+.mensaje-sistema {
     align-self: flex-start;
-    background-color: #e5e5ea;
-    color: #333;
+    background-color: #edf0f5;
+    color: #2d3748;
     text-align: left;
     border-bottom-left-radius: 5px;
 }
 
-@keyframes fadeIn {
+/* Animación de entrada */
+@keyframes aparecer {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(8px);
     }
     to {
         opacity: 1;

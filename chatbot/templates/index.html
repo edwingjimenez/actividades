@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot de Reglas</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Sistema de Conversación</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
 </head>
 <body>
-    <div id="chat-container">
-        <div id="chat-log">
-            <div class="message bot-message">¡Hola! Soy un chatbot. Escribe 'ayuda' para ver qué puedo hacer.</div>
+    <div class="panel-conversacion">
+        <div class="area-mensajes">
+            <div class="mensaje mensaje-inicial">Bienvenido al sistema de diálogo. Para ver las opciones disponibles, escriba 'opciones'.</div>
         </div>
-        <form id="user-input-form">
-            <input type="text" id="user-input" placeholder="Escribe tu mensaje..." autocomplete="off">
-            <button type="submit" id="send-btn">Enviar</button>
+        <form class="formulario-mensaje">
+            <input type="text" class="campo-texto" placeholder="Ingrese su consulta..." autocomplete="off">
+            <button type="submit" class="boton-enviar">Enviar</button>
         </form>
     </div>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/logica.js') }}"></script>
 </body>
 </html>
